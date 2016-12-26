@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' 
 
 describe CouponsController do
 
@@ -9,7 +9,7 @@ describe CouponsController do
           post :create, { :coupon => { :coupon_code => "ASD123", :store => "Dean and Deluca" } }
         }.to change(Coupon,:count).by(1)
       end
-      
+
       it "redirects to the new coupon" do
         post :create, { :coupon => { :coupon_code => "ASD123", :store => "Dean and Deluca" } }
         expect(response).to redirect_to Coupon.last
